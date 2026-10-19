@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pen</title>
+  </head>
+  <body>
+    <div class="game">
+      <h1>みんなが暮らす街</h1>
+      <p id="game-time">1年目 春1日（月） 6:00</p>
+      <div class="main">
+        <div class="character">
+<p class="character-name" id="character-name"></p>
+<p class="character-line" id="character-line"></p>
+        </div>
+        <div class="location">
+          <p id="current-location">自宅</p>
+          <p>ここにいる住人</p>
+          <div class="residents" id="resident-list">
+            <p>今は誰もいません</p>
+          </div>
+          <div class="conversation">
+            <p id="dialogue"></p>
+          </div>
+        </div>
+      </div>
+      <button id="move-button">移動</button>
+<button id="inventory-button">所持品</button>
+<button id="gather-button">採集する</button>
+      <button id="open-time-debug">時間デバッグ</button>
+      <p id="notification" hidden></p>
+
+      <div id="move-popup" class="popup" hidden>
+        <p>どこへ移動しますか？</p>
