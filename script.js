@@ -151,56 +151,7 @@ function updateGameTimeDisplay() {
 const dialogue = document.getElementById("dialogue");
 console.log("セリフ表示先:", dialogue);
 let previousResidentUI = "";
-const npcs = [
-  {
-    name: "スズキ ラン",
-    currentLocation: "自宅",
-    previousLine: "",
-    schedule: [
-      { hour: 6, location: "自宅" },
-      { hour: 8, location: "広場" },
-      { hour: 11, location: "森" },
-      { hour: 13, location: "川辺" },
-      { hour: 15, location: "広場" },
-      { hour: 19, location: "自宅" }
-    ],
-    dialogue: {
-      basic: {
-        morning: [
-          "お、おはよ。今日はいい天気だな。",
-          "今日は何するか考えるのも楽しいよな。",
-          "ふわ…まだ眠いな。"
-        ],
-        noon: [
-          "お、もうそろそろ昼か。お前は何する？",
-          "ちゃんと昼飯食うんだぞー",
-          "んー、昼からもぼちぼち頑張るか。"
-        ],
-        evening: [
-          "お、もう夕方か。あっという間だな。",
-          "そろそろ帰る支度しろよ？ちゃんと休むんだぞ",
-          "今日も一日お疲れさん。"
-        ],
-        night: [
-          "ふわ、疲れた…互いにちゃんと休もうぜ",
-          "明日は何するか考えるのも楽しいよな",
-          "夜更かししすぎるなよ？ちゃんと寝るんだぞ。"
-        ]
-      },
-      location: {
-        "広場": [
-          "広場は今日も賑やかだな。",
-          "ちょっとのんびりしてくか？"
-        ],
-        "森": [
-          "森の空気って落ち着くな。",
-        ],
-        "川辺": [],
-        "自宅": []
-      }
-    }
-  }
-];
+
 function updateResidentList() {
   // 各NPCの現在地を、現在時刻に対応する予定に合わせて更新する
   npcs.forEach(function(npc) {
