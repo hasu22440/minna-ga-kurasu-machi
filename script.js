@@ -1,5 +1,6 @@
 const DEBUG_MODE = false;
 const gatheredLocations = [];
+import { npcs } from "./npcs.js";
 
 const characters = {
   aikaneMakoto: {
