@@ -34,3 +34,25 @@
 
       <div id="move-popup" class="popup" hidden>
         <p>どこへ移動しますか？</p>
+        <div id="location-options"></div>
+        <button id="close-move-popup">閉じる</button>
+      </div>
+
+      <div id="inventory" class="popup" hidden>
+        <h2>所持品</h2>
+        <ul id="inventory-list"></ul>
+        <button id="inventory-back-button">戻る</button>
+      </div>
+
+<div id="time-debug" class="popup" hidden>
+    <h2>時間指定デバッグ</h2>
+    <label for="debug-time">指定時刻：</label>
+    <input type="time" id="debug-time">
+          <button id="debug-advance-button">指定時刻まで進める</button>
+  <button id="close-time-debug">閉じる</button>
+  </div>
+
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
