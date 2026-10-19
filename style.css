@@ -1,0 +1,75 @@
+h1 {
+  color: green;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+body {
+  background-color: beige;
+}
+
+.character,.location {
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  flex: 1;
+  text-align: center;
+  min-height: 120px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  white-space: nowrap;
+  flex-direction: column;
+}
+
+.residents {
+  padding: 0px 10px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  display: flex;
+  text-align: left;
+  width: 90%;
+}
+
+.character-name {
+  margin-bottom: 0px;
+}
+
+.character-line {
+  margin-top: 0;
+}
+
+.game {
+  background-color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid lightgray;
+  box-shadow: 0 4px 20px #0003;
+  white-space: nowrap;
+}
+
+#dialogue {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
