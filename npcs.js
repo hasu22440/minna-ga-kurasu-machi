@@ -3,6 +3,7 @@ export const npcs = [
     name: "スズキ ラン",
     currentLocation: "自宅",
     previousLine: "",
+    currentAction: "",
     schedule: [
       { hour: 6, location: "自宅" },
       { hour: 8, location: "広場" },
