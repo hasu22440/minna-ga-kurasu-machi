@@ -258,6 +258,8 @@ function updateResidentList() {
     if (latestSchedule !== null) {
       npc.currentLocation = latestSchedule.location;
     }
+    // NPCの現在の行動を決める
+    updateNpcAction(npc);
   });
 
   // 現在地にいるNPCの名前を集め、カンマ区切りの文字列にする
