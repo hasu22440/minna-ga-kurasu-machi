@@ -242,8 +242,6 @@ function updateNpcLocations() {
     if (latestSchedule !== null) {
       npc.currentLocation = latestSchedule.location;
     }
-    // NPCの現在の行動を決める
-    updateNpcAction(npc);
   });
 }
 function updateResidentList() {
