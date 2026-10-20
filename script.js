@@ -152,17 +152,13 @@ function updateGameTimeDisplay() {
 const dialogue = document.getElementById("dialogue");
 console.log("セリフ表示先:", dialogue);
 let previousResidentUI = "";
-
 function updateNpcAction(npc) {
   // 現在時刻を「0時からの経過分数」に変換する
   const currentMinutes = gameHour * 60 + gameMinute;
-
   // 次に移動する予定を探す
   let nextSchedule = null;
-
   npc.schedule.forEach(function(schedule) {
     const scheduleMinutes = schedule.hour * 60;
-
     if (scheduleMinutes > currentMinutes) {
       if (
         nextSchedule === null ||
@@ -172,31 +168,25 @@ function updateNpcAction(npc) {
       }
     }
   });
-
   // 移動予定が30分以内なら、準備中の行動を選ぶ
   if (nextSchedule !== null) {
     const minutesUntilMove =
       nextSchedule.hour * 60 - currentMinutes;
-
     if (minutesUntilMove <= 30) {
       const preparationActions = [
         "出かける準備をしている。",
         "そろそろ移動しようとしている。",
         "身支度を整えている。"
       ];
-
       npc.currentAction =
         preparationActions[
           Math.floor(Math.random() * preparationActions.length)
         ];
-
       return;
     }
   }
-
   // 現在地に到着してから30分以内か調べる
   let latestSchedule = null;
-
   npc.schedule.forEach(function(schedule) {
     if (schedule.hour * 60 <= currentMinutes) {
       if (
@@ -207,11 +197,9 @@ function updateNpcAction(npc) {
       }
     }
   });
-
   if (latestSchedule !== null) {
     const minutesSinceArrival =
       currentMinutes - latestSchedule.hour * 60;
-
     if (minutesSinceArrival < 30) {
       const arrivalActions = {
         "広場": ["広場にやってきた。", "あたりを見回している。"],
@@ -219,9 +207,7 @@ function updateNpcAction(npc) {
         "川辺": ["川辺にやってきた。", "川のそばでひと息ついている。"],
         "自宅": ["家に帰ってきた。", "家でひと息ついている。"]
       };
-
       const actions = arrivalActions[latestSchedule.location] || [];
-
       if (actions.length > 0) {
         npc.currentAction =
           actions[Math.floor(Math.random() * actions.length)];
@@ -229,10 +215,8 @@ function updateNpcAction(npc) {
       }
     }
   }
-
   // それ以外は、現在地での通常行動を選ぶ
   const locationActions = npc.dialogue.location[npc.currentLocation] || [];
-
   if (locationActions.length > 0) {
     npc.currentAction =
       locationActions[
@@ -242,7 +226,7 @@ function updateNpcAction(npc) {
     npc.currentAction = "のんびり過ごしている。";
   }
 }
-function updateResidentList() {
+function updateNpcLocations() {
   // 各NPCの現在地を、現在時刻に対応する予定に合わせて更新する
   npcs.forEach(function(npc) {
     let latestSchedule = null;
@@ -261,7 +245,8 @@ function updateResidentList() {
     // NPCの現在の行動を決める
     updateNpcAction(npc);
   });
-
+}
+function updateResidentList() {
   // 現在地にいるNPCの名前を集め、カンマ区切りの文字列にする
   const currentResidentUI = npcs
   .filter(function(npc) {
